@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var SPEED = 5.0
+@export var SPEED = 10.0
 @export var SPEED_INC = 0.5
 
 var ball_direction = 1
@@ -17,5 +17,9 @@ func _physics_process(_delta):
 		velocity *= 1.1
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+#func _on_visible_on_screen_notifier_2d_screen_exited():
+#	$OffScreenTimer.start()
+
+
+#func _on_off_screen_timer_timeout():
+#	queue_free()

@@ -18,9 +18,13 @@ script = ExtResource("1_sl2ol")
 ball = ExtResource("2_aheae")
 
 [node name="UI" parent="." instance=ExtResource("3_kexde")]
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = -3.0
 
 [node name="Player1_Paddle" type="CharacterBody2D" parent="."]
-position = Vector2(30, 325)
+position = Vector2(34, 322)
 scale = Vector2(0.5, 4)
 motion_mode = 1
 script = ExtResource("1_t0psj")
@@ -33,7 +37,7 @@ texture = ExtResource("2_hlqai")
 shape = SubResource("RectangleShape2D_pkco1")
 
 [node name="Player2_Paddle" type="CharacterBody2D" parent="."]
-position = Vector2(1125, 325)
+position = Vector2(1129, 322)
 scale = Vector2(0.5, 4)
 motion_mode = 1
 script = ExtResource("1_t0psj")
@@ -49,17 +53,18 @@ shape = SubResource("RectangleShape2D_pkco1")
 [node name="Goals" type="Node" parent="." groups=["Goals"]]
 
 [node name="Player1_Goal" parent="Goals" instance=ExtResource("5_6jfku")]
-position = Vector2(9, 0)
+position = Vector2(9, 6)
 collision_layer = 16
 player_goal = 2
 
 [node name="Player2_Goal" parent="Goals" instance=ExtResource("5_6jfku")]
-position = Vector2(1492, -10)
+position = Vector2(1501, -24)
 collision_layer = 16
 
 [node name="Walls" type="Node" parent="." groups=["Walls"]]
 
 [node name="TopWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(4, -3)
 collision_layer = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
@@ -67,12 +72,12 @@ position = Vector2(576, -10)
 shape = SubResource("RectangleShape2D_b484i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall"]
-position = Vector2(587, -11)
+position = Vector2(587, -4)
 scale = Vector2(60, 1)
 texture = ExtResource("2_hlqai")
 
 [node name="BottomWall" type="StaticBody2D" parent="Walls"]
-position = Vector2(0, 668)
+position = Vector2(4, 665)
 collision_layer = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
@@ -87,87 +92,87 @@ texture = ExtResource("2_hlqai")
 [node name="Seperator" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 8)
+position = Vector2(580, 5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 48)
+position = Vector2(580, 45)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 88)
+position = Vector2(580, 85)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 128)
+position = Vector2(580, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 168)
+position = Vector2(580, 165)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 208)
+position = Vector2(580, 205)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 248)
+position = Vector2(580, 245)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 288)
+position = Vector2(580, 285)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 328)
+position = Vector2(580, 325)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 368)
+position = Vector2(580, 365)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 408)
+position = Vector2(580, 405)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 448)
+position = Vector2(580, 445)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 488)
+position = Vector2(580, 485)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 528)
+position = Vector2(580, 525)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 568)
+position = Vector2(580, 565)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 608)
+position = Vector2(580, 605)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 
 [node name="Sprite2D17" type="Sprite2D" parent="Seperator"]
-position = Vector2(576, 648)
+position = Vector2(580, 645)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hlqai")
 

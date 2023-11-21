@@ -18,5 +18,5 @@ func goal(player):
 	players_turn *= -1
 	start_round()
 
-func win(player):
+func win():
 	get_tree().change_scene_to_file("res://Screens/win_screen.tscn")

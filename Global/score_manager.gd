@@ -1,6 +1,6 @@
 extends Node
 
-signal player_won(player)
+signal player_won()
 
 var winning_player = Globals.PLAYERS.NONE
 
@@ -24,7 +24,7 @@ func goal(player):
 func win_check(player, score):
 	if score >= goals_to_win:
 		winning_player = player
-		player_won.emit(player)
+		player_won.emit()
 
 func get_player1_score():
 	return str(player1_score)
