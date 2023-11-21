@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3e8b34gw84rq"]
+
+[ext_resource type="Script" path="res://Screens/WinScreen.gd" id="1_m7jqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eyam1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5nll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7m5o"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7jqa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="PlayerWins" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 128
+text = "Player 1 Wins!"
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 96
+text = "10 - 5"
+
+[node name="PlayAgain" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.20871, 0.20871, 0.20871, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eyam1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g5nll")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q7m5o")
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.20871, 0.20871, 0.20871, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eyam1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g5nll")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q7m5o")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

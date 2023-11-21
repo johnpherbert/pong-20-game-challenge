@@ -1,0 +1,177 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0vxjoidhfcp8"]
+
+[ext_resource type="Script" path="res://GameManager.gd" id="1_sl2ol"]
+[ext_resource type="Script" path="res://Objects/Paddle.gd" id="1_t0psj"]
+[ext_resource type="PackedScene" uid="uid://bf4du7g86bn4m" path="res://Objects/ball.tscn" id="2_aheae"]
+[ext_resource type="Texture2D" uid="uid://biynawxwl7xrj" path="res://Sprites/Block.png" id="2_hlqai"]
+[ext_resource type="PackedScene" uid="uid://cspjq2hbquu5v" path="res://ui.tscn" id="3_kexde"]
+[ext_resource type="PackedScene" uid="uid://bhrpjj17khbo6" path="res://Objects/goal.tscn" id="5_6jfku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkco1"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b484i"]
+size = Vector2(1151, 20)
+
+[node name="GameBoard" type="Node"]
+script = ExtResource("1_sl2ol")
+ball = ExtResource("2_aheae")
+
+[node name="UI" parent="." instance=ExtResource("3_kexde")]
+
+[node name="Player1_Paddle" type="CharacterBody2D" parent="."]
+position = Vector2(30, 325)
+scale = Vector2(0.5, 4)
+motion_mode = 1
+script = ExtResource("1_t0psj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1_Paddle"]
+texture = ExtResource("2_hlqai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1_Paddle"]
+shape = SubResource("RectangleShape2D_pkco1")
+
+[node name="Player2_Paddle" type="CharacterBody2D" parent="."]
+position = Vector2(1125, 325)
+scale = Vector2(0.5, 4)
+motion_mode = 1
+script = ExtResource("1_t0psj")
+player = "player2"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2_Paddle"]
+texture = ExtResource("2_hlqai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2_Paddle"]
+shape = SubResource("RectangleShape2D_pkco1")
+
+[node name="Goals" type="Node" parent="." groups=["Goals"]]
+
+[node name="Player1_Goal" parent="Goals" instance=ExtResource("5_6jfku")]
+position = Vector2(9, 0)
+collision_layer = 16
+player_goal = 2
+
+[node name="Player2_Goal" parent="Goals" instance=ExtResource("5_6jfku")]
+position = Vector2(1492, -10)
+collision_layer = 16
+
+[node name="Walls" type="Node" parent="." groups=["Walls"]]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_b484i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/TopWall"]
+position = Vector2(587, -11)
+scale = Vector2(60, 1)
+texture = ExtResource("2_hlqai")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 668)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(576, -10)
+shape = SubResource("RectangleShape2D_b484i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/BottomWall"]
+position = Vector2(566, -8)
+scale = Vector2(60, 1)
+texture = ExtResource("2_hlqai")
+
+[node name="Seperator" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 128)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 168)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 208)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 288)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 328)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 368)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 408)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 488)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 528)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 568)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 608)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Seperator"]
+position = Vector2(576, 648)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hlqai")
+
+[connection signal="goal" from="Goals/Player1_Goal" to="." method="goal"]
+[connection signal="goal" from="Goals/Player1_Goal" to="UI" method="goal"]
+[connection signal="goal" from="Goals/Player2_Goal" to="." method="goal"]
+[connection signal="goal" from="Goals/Player2_Goal" to="UI" method="goal"]

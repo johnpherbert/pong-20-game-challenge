@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf4du7g86bn4m"]
+
+[ext_resource type="Script" path="res://Objects/Ball.gd" id="1_200kf"]
+[ext_resource type="Texture2D" uid="uid://biynawxwl7xrj" path="res://Sprites/Block.png" id="2_cw7d4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qfe3"]
+size = Vector2(32, 32)
+
+[node name="Ball" type="CharacterBody2D"]
+position = Vector2(601, 324)
+scale = Vector2(0.5, 0.5)
+collision_mask = 257
+motion_mode = 1
+script = ExtResource("1_200kf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cw7d4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5qfe3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
